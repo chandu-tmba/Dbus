@@ -43,7 +43,7 @@ busctl call  dbus_servicename dbus_object_path  interfacename method_name signat
 Ex: 
 
 
-busctl command to get the dbus objects implementig particular dbus interface
+busctl command to get the dbus objects implementig particular dbus interface xyz.openbmc_project.Software.Version
 dbus-send --system --print-reply \
 --dest=dbus_servicename \
 dbus_object_path \
@@ -56,7 +56,7 @@ dbus-send --system --print-reply \
 xyz.openbmc_project.ObjectMapper.GetSubTree \
 string:"/" int32:0 array:string:"xyz.openbmc_project.Software.Version"
 
-dbus call to get dbus obj paths implementing interface xyz.openbmc_project.Association
+dbus call to get dbus obj paths implementing interface xyz.openbmc_project.Inventory.Item.Chassis
 dbus-send --system --print-reply \
 --dest=xyz.openbmc_project.ObjectMapper \
 /xyz/openbmc_project/object_mapper \
