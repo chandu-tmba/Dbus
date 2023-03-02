@@ -1,0 +1,47 @@
+DBUS commands 
+
+Send signal using dbus-send
+dbus-send --system --type=signal object_path interface_name.signal_name
+Ex: 
+
+busctl tree dbus_servicename
+Ex: busctl tree xyz.openbmc_project.EntityManager 
+`-/xyz
+  `-/xyz/openbmc_project
+    |-/xyz/openbmc_project/EntityManager
+    `-/xyz/openbmc_project/inventory
+      `-/xyz/openbmc_project/inventory/system
+        `-/xyz/openbmc_project/inventory/system/bmc
+
+
+busctl introspect  dbus_servicename dbus_object_path 
+
+Ex: busctl introspect  xyz.openbmc_project.EntityManager  /xyz/openbmc_project/EntityManager
+NAME                                TYPE      SIGNATURE RESULT/VALUE FLAGS
+org.freedesktop.DBus.Introspectable interface -         -            -
+.Introspect                         method    -         s            -
+org.freedesktop.DBus.Peer           interface -         -            -
+.GetMachineId                       method    -         s            -
+.Ping                               method    -         -            -
+org.freedesktop.DBus.Properties     interface -         -            -
+.Get                                method    ss        v            -
+.GetAll                             method    s         a{sv}        -
+.Set                                method    ssv       -            -
+.PropertiesChanged                  signal    sa{sv}as  -            -
+xyz.openbmc_project.EntityManager   interface -         -            -
+.ReScan                             method    -         -            -
+
+
+busctl get-property   dbus_servicename dbus_object_path  interfacename property
+Ex: busctl get-property   xyz.openbmc_project.Control.Host /xyz/openbmc_project/control/host0   xyz.openbmc_project.Condition.HostFirmware CurrentFirmwareCondition 
+s "xyz.openbmc_project.Condition.HostFirmware.FirmwareCondition.Off"
+
+
+busctl set-property   dbus_servicename dbus_object_path  interfacename property
+Ex: busctl set-property   xyz.openbmc_project.Control.Host /xyz/openbmc_project/control/host0   xyz.openbmc_project.Condition.HostFirmware CurrentFirmwareCondition  s "xyz.openbmc_project.Condition.HostFirmware.FirmwareCondition.Off"
+
+busctl call  dbus_servicename dbus_object_path  interfacename method_name signature <params>
+Ex: 
+
+
+
