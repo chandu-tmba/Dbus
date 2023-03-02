@@ -42,5 +42,16 @@ Ex: busctl set-property   xyz.openbmc_project.Control.Host /xyz/openbmc_project/
 busctl call  dbus_servicename dbus_object_path  interfacename method_name signature <params>
 Ex: 
 
+Conventional name	ASCII type-code	Encoding
+BYTE	y (121)	Unsigned 8-bit integer
+BOOLEAN	b (98)	Boolean value: 0 is false, 1 is true, any other value allowed by the marshalling format is invalid
+INT16	n (110)	Signed (two's complement) 16-bit integer
+UINT16	q (113)	Unsigned 16-bit integer
+INT32	i (105)	Signed (two's complement) 32-bit integer
+UINT32	u (117)	Unsigned 32-bit integer
+INT64	x (120)	Signed (two's complement) 64-bit integer (mnemonic: x and t are the first characters in "sixty" not already used for something more common)
+UINT64	t (116)	Unsigned 64-bit integer
+DOUBLE	d (100)	IEEE 754 double-precision floating point
+UNIX_FD	h (104)	Unsigned 32-bit integer representing an index into an out-of-band array of file descriptors, transferred via some platform-specific mechanism (mnemonic: h for handle)
 
 
