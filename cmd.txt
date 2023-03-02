@@ -15,7 +15,6 @@ Ex: busctl tree xyz.openbmc_project.EntityManager
 
 
 busctl introspect  dbus_servicename dbus_object_path 
-
 Ex: busctl introspect  xyz.openbmc_project.EntityManager  /xyz/openbmc_project/EntityManager
 NAME                                TYPE      SIGNATURE RESULT/VALUE FLAGS
 org.freedesktop.DBus.Introspectable interface -         -            -
