@@ -68,9 +68,9 @@ dbus-send --system --print-reply --dest=xyz.openbmc_project.User.Manager /xyz/op
 
 Get endpoints of Association
 busctl get-property xyz.openbmc_project.ObjectMapper dbus_obj_path/<forward_assoc>  xyz.openbmc_project.Association endpoints
-as 1 "/xyz/openbmc_project/software/HGX_FW_BMC_0"
+as 1 "/xyz/openbmc_project/software/BMC"
 Ex: busctl get-property xyz.openbmc_project.ObjectMapper /xyz/openbmc_project/software/functional  xyz.openbmc_project.Association endpoints
-as 1 "/xyz/openbmc_project/software/HGX_FW_BMC_0"
+as 1 "/xyz/openbmc_project/software/BMC"
 
 
 Conventional name	ASCII type-code	Encoding
