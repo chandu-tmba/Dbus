@@ -42,6 +42,30 @@ Ex: busctl set-property   xyz.openbmc_project.Control.Host /xyz/openbmc_project/
 busctl call  dbus_servicename dbus_object_path  interfacename method_name signature <params>
 Ex: 
 
+
+busctl command to get the dbus objects implementig particular dbus interface
+dbus-send --system --print-reply \
+--dest=dbus_servicename \
+dbus_object_path \
+interfacename method_name \
+signature
+
+dbus-send --system --print-reply \
+--dest=xyz.openbmc_project.ObjectMapper \
+/xyz/openbmc_project/object_mapper \
+xyz.openbmc_project.ObjectMapper.GetSubTree \
+string:"/" int32:0 array:string:"xyz.openbmc_project.Software.Version"
+
+dbus call to get dbus obj paths implementing interface xyz.openbmc_project.Association
+dbus-send --system --print-reply \
+--dest=xyz.openbmc_project.ObjectMapper \
+/xyz/openbmc_project/object_mapper \
+xyz.openbmc_project.ObjectMapper.GetSubTreePaths \
+string:"/" int32:0 array:string:"xyz.openbmc_project.Inventory.Item.Chassis"
+
+dbu call to get all properties of a dbus object path under specific dbus service
+dbus-send --system --print-reply --dest=xyz.openbmc_project.User.Manager /xyz/openbmc_project/user/root org.freedesktop.DBus.Properties.GetAll  string:""
+
 Conventional name	ASCII type-code	Encoding
 BYTE	y (121)	Unsigned 8-bit integer
 BOOLEAN	b (98)	Boolean value: 0 is false, 1 is true, any other value allowed by the marshalling format is invalid
