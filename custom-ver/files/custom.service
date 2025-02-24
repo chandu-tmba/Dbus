@@ -1,0 +1,16 @@
+[Unit]
+Description=my-custom-server
+DefaultDependencies=no
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/custom_server
+Restart=always
+RestartSec=2
+SyslogIdentifier=custom-server
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+
