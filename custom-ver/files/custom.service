@@ -4,7 +4,7 @@ DefaultDependencies=no
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/custom_server
+ExecStart=/usr/bin/custom-server
 Restart=always
 RestartSec=2
 SyslogIdentifier=custom-server
